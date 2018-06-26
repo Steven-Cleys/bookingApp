@@ -21,7 +21,7 @@ class DataInit {
 
         val slot1 = Slot(
              reservationName = "a test", date = LocalDate.now(), timeFrom = LocalTime.NOON
-            , timeTo = LocalTime.of(14,0)
+            , timeTo = LocalTime.of(13,0)
         )
 
         slots.add(slot1)

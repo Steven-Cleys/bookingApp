@@ -3,8 +3,10 @@ package com.personal.project.bookapp.endpoints
 import com.personal.project.bookapp.domain.Slot
 import com.personal.project.bookapp.service.BookingService
 import org.springframework.stereotype.Component
+import org.springframework.web.bind.annotation.RequestBody
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.Response
 
 @Path("/slot")
 @Component
@@ -21,5 +23,17 @@ class SlotEndpoint(val bookingService: BookingService) {
     @Path("/date/{date}")
     fun getAllSlotsByDate(@PathParam("date") date:String): List<Slot> {
         return bookingService.getAllByDate(date)
+    }
+
+    @POST
+    @Path("/book")
+    fun getAllSlotsByDate(@RequestBody slot:Slot) : Response {
+        //TODO better error handling
+        return try {
+            val _slot = bookingService.addSlot(slot)
+            Response.ok(_slot, MediaType.APPLICATION_JSON).build()
+        } catch (e:Exception) {
+            Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.localizedMessage).build()
+        }
     }
 }

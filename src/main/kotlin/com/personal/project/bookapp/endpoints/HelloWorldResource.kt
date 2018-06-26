@@ -7,12 +7,11 @@ import javax.ws.rs.Path
 
 @Path("/hello")
 @Component
-class HelloWorldResource(val bookingService:BookingService) {
+class HelloWorldResource() {
 
     @Path("/world")
     @GET
     fun helloWorld(): String {
-        bookingService.getData()
         return "Hello World"
     }
 
