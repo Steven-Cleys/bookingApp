@@ -11,3 +11,7 @@ buildNumber.properties
 \.idea/
 
 *.iml
+
+src/main/kotlin/com/personal/project/bookapp/\.DS_Store
+
+\.DS_Store

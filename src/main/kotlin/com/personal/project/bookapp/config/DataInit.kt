@@ -26,13 +26,15 @@ class DataInit {
 
         slots.add(slot1)
         val slot2 = Slot(
-             "Ikke", LocalDate.now(), LocalTime.NOON
-            , LocalTime.of(14,0)
+             "Ikke", LocalDate.now(), LocalTime.of(14,0)
+            , LocalTime.of(15,0)
         )
 
         slots.add(slot2)
 
         slotRepository.saveAll(slots)
+
+        println(" = " + slotRepository.findAllByDate(LocalDate.now()))
 
     }
 }
