@@ -3,6 +3,7 @@ package com.personal.project.bookapp.endpoints
 import com.personal.project.bookapp.domain.Slot
 import com.personal.project.bookapp.service.BookingService
 import org.springframework.stereotype.Component
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestBody
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
